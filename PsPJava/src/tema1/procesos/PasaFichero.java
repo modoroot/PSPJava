@@ -23,18 +23,25 @@ public class PasaFichero {
 			// se crea un fichero de texto a partir de las entradas
 			// introducidas por consola
 			PrintWriter pw = new PrintWriter(new FileWriter("palabras.txt"));
+			PrintWriter pwE = new PrintWriter(new FileWriter("nopalindromas.txt"));
 			while (cadena.length() > 1 && cadena.charAt(0) != 0) {
 				System.out.println("Introduce una cadena:(0 para terminar)");
 				cadena = sc.nextLine();
+				cadena = cadena.replace(" ", "");
+				StringBuilder sb = new StringBuilder(cadena).reverse();
+				//esto no me funciona
+				if (!cadena.equalsIgnoreCase(sb.toString())) {
+					pwE.println(cadena);
+				}
 				// borra el 0 introducido al haber terminado
 				if (cadena.charAt(0) == '0') {
 					cadena.replace(cadena.charAt(0), ' ');
 				} else {
 					pw.println(cadena);
 				}
-
 			}
 			pw.close();
+			pwE.close();
 			sc.close();
 			ProcessBuilder pb = new ProcessBuilder("java", "tema1.procesos.DameFichero");
 			// directorio de trabajo
@@ -42,6 +49,8 @@ public class PasaFichero {
 			// redirección del flujo de entrada del proceso del programa
 			// al que se llama
 			pb.redirectInput(new File("palabras.txt"));
+			//redirección del flujo de errores del proceso
+			pb.redirectError(new File("nopalindromas.txt"));
 			// redirección del flujo de salida del proceso del programa al
 			// que se llama
 			pb.redirectOutput(new File("palindromas.txt"));
