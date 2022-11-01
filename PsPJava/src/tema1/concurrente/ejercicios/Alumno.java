@@ -1,7 +1,12 @@
 package tema1.concurrente.ejercicios;
 
 import java.util.ArrayList;
-
+/**
+ * Clase que define las propiedades, getters-setters, constructores
+ * de los alumnos
+ * @author amna
+ * @version 1.0
+ */
 public class Alumno {
 	private int id;
 	private int edad;

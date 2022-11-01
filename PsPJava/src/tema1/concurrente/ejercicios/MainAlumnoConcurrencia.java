@@ -11,6 +11,7 @@ public class MainAlumnoConcurrencia {
 	public static void main(String[] args) {
 		Alumno alumno = new Alumno();
 		alumno.alumGenerador();
+		//creación de las interfaces Runnable. Una por operación
 		Runnable media = () ->{
 			alumno.alumMedia();
 		};
