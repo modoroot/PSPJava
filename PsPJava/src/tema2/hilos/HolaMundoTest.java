@@ -10,11 +10,16 @@ package tema2.hilos;
 public class HolaMundoTest {
 
 	public static void main(String[] args) {
+		//instancia de la clase HolaMundo
 		HolaMundo holaMundo = new HolaMundo();
+		//creación de los hilos
 			for (int i = 0; i < 5; i++) {
 					Thread hilo = new Thread(holaMundo);
 					hilo.start();
 					try {
+						//espera a que termine el hilo ejecutándose para iniciar
+						//el siguiente teniendo de tiempo de espera el id del hilo
+						//ejecutándose en ese momento
 						hilo.join(Thread.currentThread().getId());
 					} catch (InterruptedException e) {
 						System.out.println("Hilo interrumpido");
