@@ -14,7 +14,7 @@ public class DadosTirada {
 	public static void main(String[] args) {
 		DadosTirada dadosTirada = new DadosTirada();
 		ThreadGroup tg = new ThreadGroup("tiradas");
-		//implementación interfaz a partir de expresines lambda
+		//implementación interfaz Runnable a partir de expresiones lambda
 		Runnable tirada = () -> {
 			int suertes = (int) (Math.random() * 6 + 1);
 			//se añade a un ArrayList el resultado aleatorio entre 1 y 6
