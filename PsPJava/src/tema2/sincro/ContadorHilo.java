@@ -12,7 +12,7 @@ public class ContadorHilo extends Thread{
            counter.aumentarCont(i);
            System.out.println(counter+" "+Thread.currentThread().getName());
            try {
-			Thread.sleep(5000);
+			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
