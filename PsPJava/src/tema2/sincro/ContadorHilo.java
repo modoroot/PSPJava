@@ -23,19 +23,23 @@ public class ContadorHilo extends Thread {
 	/**
 	 * Método heredado de Thread que utilizan los hilos una vez se empiezan a
 	 * ejecutar. Contiene una variable compartida por todos los hilos creados
-	 * y sincronizada por la palabra reservada synchronized
+	 * y sincronizada por la palabra reservada synchronized. Gestión de 
+	 * región crítica
 	 */
 	public void run() {
 		synchronized(counter) {
 			for (int j = 0; j < 1000; j++) {
+				//REGIÓN CRÍTICA
 				counter.aumentarCont(i + 1);
 				System.out.println(counter + " " + Thread.currentThread().getName());
 			}
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				System.err.println("Hilo interrumpido");
-			}
+			
+//			try {
+//				
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				System.err.println("Hilo interrumpido");
+//			}
 		}
 	}
 }
