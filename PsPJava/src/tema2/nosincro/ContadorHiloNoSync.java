@@ -21,8 +21,7 @@ public class ContadorHiloNoSync extends Thread {
 
 	/**
 	 * Método heredado de Thread que utilizan los hilos una vez se empiezan a
-	 * ejecutar. Contiene una variable compartida por todos los hilos creados
-	 * y sincronizada por la palabra reservada synchronized
+	 * ejecutar.
 	 */
 	public void run() {
 			for (int j = 0; j < 1000; j++) {
