@@ -1,14 +1,13 @@
-package tema2.sincro;
+package tema2.nosincro;
 
 /**
- * Clase sincronizadora del contador a partir de hilos utilizando la palabra
- * reservada synchronized
+ * Clase no sincronizadora del contador
  * 
  * @author amna
  * @version 1.0
  */
-public class ContadorHilo extends Thread {
-	private Contador counter;
+public class ContadorHiloNoSync extends Thread {
+	private ContadorNoSync counter;
 	private int i;
 
 	/**
@@ -16,7 +15,7 @@ public class ContadorHilo extends Thread {
 	 * 
 	 * @param counter contador
 	 */
-	public ContadorHilo(Contador counter) {
+	public ContadorHiloNoSync(ContadorNoSync counter) {
 		this.counter = counter;
 	}
 
@@ -26,7 +25,6 @@ public class ContadorHilo extends Thread {
 	 * y sincronizada por la palabra reservada synchronized
 	 */
 	public void run() {
-		synchronized(counter) {
 			for (int j = 0; j < 1000; j++) {
 				counter.aumentarCont(i + 1);
 				System.out.println(counter + " " + Thread.currentThread().getName());
@@ -36,6 +34,6 @@ public class ContadorHilo extends Thread {
 			} catch (InterruptedException e) {
 				System.err.println("Hilo interrumpido");
 			}
-		}
+		
 	}
 }

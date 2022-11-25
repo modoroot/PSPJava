@@ -22,11 +22,11 @@ public class TestContadorSync {
 			// pero la variable contador no se verá afectada y seguirá aumentando de 1 en 1
 			// por donde lo dejó el hilo anterior debido a que la variable está compartida
 			// y sincronizada
-			try {
-				h.join();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				h.join();
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
 		}
 
 	}
