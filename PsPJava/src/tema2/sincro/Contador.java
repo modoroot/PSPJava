@@ -4,7 +4,7 @@ public class Contador{
 
     int count = 0;
    
-    public synchronized void aumentarCont(int value){
+    public void aumentarCont(int value){
       this.count += value;
     }
 

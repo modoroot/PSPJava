@@ -13,11 +13,11 @@ public class TestContadorSync {
 			Thread h = (new ContadorHilo(counter));
 			h.setName("Hilo "+i);
 			h.start();
-			try {
-				h.join();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				h.join();
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
 		}
 	      }
 	    }
