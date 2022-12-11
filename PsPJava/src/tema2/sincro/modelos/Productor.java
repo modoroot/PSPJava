@@ -11,8 +11,8 @@ public class Productor extends Thread {
 
     /**
      * Constructor de la clase
-     * @param c
-     * @param num
+     * @param c objeto instanciado de cola
+     * @param num número del productor
      */
     public Productor(Cola c, int num) {
         cola = c;

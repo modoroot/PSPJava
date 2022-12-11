@@ -11,8 +11,8 @@ public class Consumidor extends Thread {
 
     /**
      * Constructor de la clase
-     * @param c
-     * @param num
+     * @param c objeto instanciado de Cola
+     * @param num número del consumidor
      */
     public Consumidor(Cola c, int num) {
         cola = c;
