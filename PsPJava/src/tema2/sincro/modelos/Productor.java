@@ -1,24 +1,32 @@
 package tema2.sincro.modelos;
 
+/**
+ * Clase productora de los productos
+ * @author amna
+ * @version 1.0
+ */
 public class Productor extends Thread {
     private Cola cola;
-    private int n;
+    private int num;
 
-    public Productor(Cola c, int n) {
-        this.cola = c;
-        this.n = n;
+    /**
+     * Constructor de la clase
+     * @param c
+     * @param num
+     */
+    public Productor(Cola c, int num) {
+        cola = c;
+        this.num = num;
     }
 
+    /**
+     * Método override para los hilos creados
+     */
     public void run() {
         for (int i = 0; i < 5; i++) {
-            this.cola.put(i); //pone el número
-            System.out.println(i + "=>Productor : "
-                    + n + ", produce: " + i);
-            try {
-                sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            cola.put(i);
+            System.out.println("Productor: " + this.num
+                    + " put: " + i);
         }
     }
 }

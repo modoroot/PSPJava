@@ -1,20 +1,33 @@
 package tema2.sincro.modelos;
 
+/**
+ * Clase consumidora de los productos.
+ * @author amna
+ * @version 1.0
+ */
 public class Consumidor extends Thread {
     private Cola cola;
-    private int n;
+    private int num;
 
-    public Consumidor(Cola c, int n) {
+    /**
+     * Constructor de la clase
+     * @param c
+     * @param num
+     */
+    public Consumidor(Cola c, int num) {
         cola = c;
-        this.n = n;
+        this.num = num;
     }
 
+    /**
+     * Método override para los hilos creados
+     */
     public void run() {
-        int valor = 0;
+        int val = 0;
         for (int i = 0; i < 5; i++) {
-            valor = cola.get(); //recoge el número
-            System.out.println(i + "=>Consumidor: " +
-                    n + ", consume: " + valor);
+            val = cola.get();
+            System.out.println("Consumidor: " + this.num
+                    + " get: " + val);
         }
     }
 }
